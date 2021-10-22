@@ -1,0 +1,211 @@
+/* Start Golbal*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html {
+  font-size: 12px;
+}
+
+:root {
+  --main-cyan-color: #2A93B9;
+  --main-white-color: #ffffff;
+  --light-shadow-color: #aaa;
+  --heavy-bg-color: #0001;
+  --main-border-radius: 10px;
+  --circle-border-radius: 50px;
+  --main-transition: 0.3s;
+  --long-transition: 0.5s;
+}
+
+.container {
+  padding: 0 15px;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+/* End Golbal*/
+/* Start Main Nav */
+nav#main-nav {
+  padding: 10px 0;
+  border-bottom: 7px solid var(--main-cyan-color);
+  box-shadow: 0 2px 5px var(--light-shadow-color);
+}
+nav#main-nav .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav#main-nav .container .bars {
+  display: none;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  nav#main-nav .container .bars {
+    flex-direction: column;
+    display: flex;
+  }
+}
+nav#main-nav .container .bars.active span {
+  background: red;
+}
+nav#main-nav .container .bars.active :first-child {
+  transform: rotate(25deg);
+}
+nav#main-nav .container .bars.active :nth-child(2) {
+  transform: scaleX(1.4) translate(-25%);
+}
+nav#main-nav .container .bars.active :last-child {
+  transform: rotate(-25deg);
+}
+nav#main-nav .container .bars span {
+  width: 40px;
+  height: 3px;
+  background: var(--main-cyan-color);
+  margin-top: 5px;
+  transition: var(--main-transition);
+}
+nav#main-nav .container ul.options {
+  display: flex;
+  flex-direction: row;
+  font-family: "Lemonada", cursive;
+}
+nav#main-nav .container ul.options ul.sections {
+  display: none;
+}
+@media (max-width: 768px) {
+  nav#main-nav .container ul.options {
+    position: absolute;
+    flex-direction: column;
+    top: 60px;
+    background: var(--main-white-color);
+    box-shadow: -5px 0 10px var(--light-shadow-color);
+    width: 50%;
+    right: -100%;
+    height: calc(100% - 60px);
+    transition: var(--long-transition);
+    opacity: 0;
+  }
+  nav#main-nav .container ul.options.active {
+    opacity: 1;
+    right: 0;
+  }
+  nav#main-nav .container ul.options ul.sections {
+    margin-bottom: 50px;
+    display: block;
+  }
+  nav#main-nav .container ul.options .border {
+    border-top: 1px solid var(--light-shadow-color);
+  }
+  nav#main-nav .container ul.options li {
+    transition: var(--main-transition);
+    border-bottom: 1px solid var(--light-shadow-color);
+    padding: 10px 0;
+  }
+  nav#main-nav .container ul.options li:hover {
+    background: var(--heavy-bg-color);
+    padding-right: 10px;
+  }
+}
+nav#main-nav .container ul.options li {
+  position: relative;
+  padding: 10px 0px 10px 10px;
+  cursor: pointer;
+}
+nav#main-nav .container ul.options li:hover {
+  color: var(--main-cyan-color);
+}
+nav#main-nav .container ul.options li::before {
+  content: "";
+  position: absolute;
+  bottom: -19px;
+  left: 0;
+  width: 0%;
+  height: 7px;
+  background: var(--main-white-color);
+  transition: var(--main-transition) 0.05s;
+}
+nav#main-nav .container ul.options li:hover:before {
+  width: 100%;
+}
+nav#main-nav .container ul.options li i {
+  padding: 0 10px 0 5px;
+  font-size: 1.4rem;
+}
+nav#main-nav .container ul.features {
+  display: flex;
+}
+nav#main-nav .container ul.features li :not(input) {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  background: var(--main-cyan-color);
+  border-radius: var(--circle-border-radius);
+  color: var(--main-white-color);
+  cursor: pointer;
+  margin-left: 10px;
+  border: 1px solid var(--main-white-color);
+  font-size: 1.4rem;
+}
+nav#main-nav .container ul.features li :not(input)#changeTheme:hover {
+  color: var(--main-cyan-color);
+  border: 1px solid var(--main-cyan-color);
+  background: var(--main-white-color);
+}
+nav#main-nav .container ul.features li:first-child {
+  position: relative;
+  border-radius: var(--circle-border-radius);
+  margin-left: 10px;
+}
+nav#main-nav .container ul.features li:first-child::after {
+  content: "\f002";
+  font-family: "Font Awesome 5 Free";
+  font-size: 1.4rem;
+  font-weight: 900;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  background: var(--main-cyan-color);
+  border-radius: var(--circle-border-radius);
+  display: grid;
+  place-items: center;
+  color: white;
+}
+nav#main-nav .container ul.features li:first-child input {
+  width: 40px;
+  height: 40px;
+  padding-right: 10px;
+  border-radius: var(--circle-border-radius);
+  transition: var(--main-transition);
+  outline: none;
+  border: 2px solid var(--main-cyan-color);
+  font-family: "Lemonada", cursive;
+}
+nav#main-nav .container ul.features li:first-child input[type=text].active {
+  width: 200px;
+  padding-left: 45px;
+}
+
+/* End Main Nav */
+
+/*# sourceMappingURL=style.css.map */
