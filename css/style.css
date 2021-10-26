@@ -12,13 +12,18 @@ html {
 
 :root {
   --main-cyan-color: #2A93B9;
-  --main-white-color: #ffffff;
+  --white: #ffffff;
   --light-shadow-color: #aaa;
   --heavy-bg-color: #0001;
+  --black: #000;
+  --gray: #aaa;
   --main-border-radius: 10px;
   --circle-border-radius: 50px;
   --main-transition: 0.3s;
   --long-transition: 0.5s;
+  --main-font: "Lemonada", cursive;
+  --margin-top: 60px;
+  --little-separator: 20px;
 }
 
 .container {
@@ -32,70 +37,84 @@ html {
 }
 @media (min-width: 992px) {
   .container {
-    width: 970px;
+    width: 920px;
   }
 }
 @media (min-width: 1200px) {
   .container {
-    width: 1170px;
+    width: 1130px;
   }
 }
 
 /* End Golbal*/
 /* Start Main Nav */
-nav#main-nav {
-  padding: 10px 0;
+@media (max-width: 768px) {
+  .paddinger {
+    padding-bottom: var(--margin-top);
+  }
+}
+.paddinger nav#main-nav {
   border-bottom: 7px solid var(--main-cyan-color);
   box-shadow: 0 2px 5px var(--light-shadow-color);
+  --padding-top: 10px;
+  padding: var(--padding-top) 0;
+  background: var(--white);
+  width: 100%;
 }
-nav#main-nav .container {
+@media (max-width: 768px) {
+  .paddinger nav#main-nav {
+    position: fixed;
+    top: 0;
+  }
+}
+.paddinger nav#main-nav .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-nav#main-nav .container .bars {
+.paddinger nav#main-nav .container .bars {
   display: none;
   cursor: pointer;
 }
 @media (max-width: 768px) {
-  nav#main-nav .container .bars {
+  .paddinger nav#main-nav .container .bars {
     flex-direction: column;
     display: flex;
   }
 }
-nav#main-nav .container .bars.active span {
+.paddinger nav#main-nav .container .bars.active span {
   background: red;
 }
-nav#main-nav .container .bars.active :first-child {
+.paddinger nav#main-nav .container .bars.active :first-child {
   transform: rotate(25deg);
 }
-nav#main-nav .container .bars.active :nth-child(2) {
+.paddinger nav#main-nav .container .bars.active :nth-child(2) {
   transform: scaleX(1.4) translate(-25%);
 }
-nav#main-nav .container .bars.active :last-child {
+.paddinger nav#main-nav .container .bars.active :last-child {
   transform: rotate(-25deg);
 }
-nav#main-nav .container .bars span {
+.paddinger nav#main-nav .container .bars span {
   width: 40px;
   height: 3px;
   background: var(--main-cyan-color);
   margin-top: 5px;
   transition: var(--main-transition);
 }
-nav#main-nav .container ul.options {
+.paddinger nav#main-nav .container ul.options {
   display: flex;
   flex-direction: row;
-  font-family: "Lemonada", cursive;
+  font-family: var(--main-font);
 }
-nav#main-nav .container ul.options ul.sections {
+.paddinger nav#main-nav .container ul.options ul.sections {
   display: none;
 }
 @media (max-width: 768px) {
-  nav#main-nav .container ul.options {
-    position: absolute;
+  .paddinger nav#main-nav .container ul.options {
+    position: fixed;
     flex-direction: column;
     top: 60px;
-    background: var(--main-white-color);
+    background: var(--white);
     box-shadow: -5px 0 10px var(--light-shadow-color);
     width: 50%;
     right: -100%;
@@ -103,79 +122,88 @@ nav#main-nav .container ul.options ul.sections {
     transition: var(--long-transition);
     opacity: 0;
   }
-  nav#main-nav .container ul.options.active {
+  .paddinger nav#main-nav .container ul.options.active {
     opacity: 1;
     right: 0;
   }
-  nav#main-nav .container ul.options ul.sections {
+  .paddinger nav#main-nav .container ul.options ul.sections {
     margin-bottom: 50px;
     display: block;
   }
-  nav#main-nav .container ul.options .border {
+  .paddinger nav#main-nav .container ul.options .border {
     border-top: 1px solid var(--light-shadow-color);
   }
-  nav#main-nav .container ul.options li {
+  .paddinger nav#main-nav .container ul.options li {
+    height: 40px;
     transition: var(--main-transition);
     border-bottom: 1px solid var(--light-shadow-color);
     padding: 10px 0;
   }
-  nav#main-nav .container ul.options li:hover {
+  .paddinger nav#main-nav .container ul.options li:hover {
     background: var(--heavy-bg-color);
     padding-right: 10px;
   }
 }
-nav#main-nav .container ul.options li {
+@media (max-width: 450px) {
+  .paddinger nav#main-nav .container ul.options {
+    width: 100%;
+  }
+}
+.paddinger nav#main-nav .container ul.options li {
   position: relative;
   padding: 10px 0px 10px 10px;
   cursor: pointer;
 }
-nav#main-nav .container ul.options li:hover {
-  color: var(--main-cyan-color);
-}
-nav#main-nav .container ul.options li::before {
+.paddinger nav#main-nav .container ul.options li::before {
   content: "";
-  position: absolute;
-  bottom: -19px;
-  left: 0;
-  width: 0%;
+  background: var(--white);
+  width: 0;
   height: 7px;
-  background: var(--main-white-color);
-  transition: var(--main-transition) 0.05s;
+  position: absolute;
+  bottom: calc(var(--padding-top) - var(--padding-top) * 2 - 8.7px);
+  left: 0;
+  transition: var(--main-transition);
 }
-nav#main-nav .container ul.options li:hover:before {
+.paddinger nav#main-nav .container ul.options li:hover:before {
   width: 100%;
 }
-nav#main-nav .container ul.options li i {
+.paddinger nav#main-nav .container ul.options li:hover a, .paddinger nav#main-nav .container ul.options li:hover i {
+  color: var(--main-cyan-color);
+}
+.paddinger nav#main-nav .container ul.options li a {
+  color: var(--black);
+  text-decoration: none;
+}
+.paddinger nav#main-nav .container ul.options li i {
   padding: 0 10px 0 5px;
   font-size: 1.4rem;
 }
-nav#main-nav .container ul.features {
+.paddinger nav#main-nav .container ul.features {
   display: flex;
 }
-nav#main-nav .container ul.features li :not(input) {
+.paddinger nav#main-nav .container ul.features li :not(input) {
   width: 40px;
   height: 40px;
   display: grid;
   place-items: center;
   background: var(--main-cyan-color);
   border-radius: var(--circle-border-radius);
-  color: var(--main-white-color);
+  color: var(--white);
   cursor: pointer;
   margin-left: 10px;
-  border: 1px solid var(--main-white-color);
   font-size: 1.4rem;
 }
-nav#main-nav .container ul.features li :not(input)#changeTheme:hover {
+.paddinger nav#main-nav .container ul.features li :not(input)#changeTheme:hover {
   color: var(--main-cyan-color);
   border: 1px solid var(--main-cyan-color);
-  background: var(--main-white-color);
+  background: var(--white);
 }
-nav#main-nav .container ul.features li:first-child {
+.paddinger nav#main-nav .container ul.features li:first-child {
   position: relative;
   border-radius: var(--circle-border-radius);
   margin-left: 10px;
 }
-nav#main-nav .container ul.features li:first-child::after {
+.paddinger nav#main-nav .container ul.features li:first-child::after {
   content: "\f002";
   font-family: "Font Awesome 5 Free";
   font-size: 1.4rem;
@@ -191,7 +219,7 @@ nav#main-nav .container ul.features li:first-child::after {
   place-items: center;
   color: white;
 }
-nav#main-nav .container ul.features li:first-child input {
+.paddinger nav#main-nav .container ul.features li:first-child input {
   width: 40px;
   height: 40px;
   padding-right: 10px;
@@ -199,13 +227,116 @@ nav#main-nav .container ul.features li:first-child input {
   transition: var(--main-transition);
   outline: none;
   border: 2px solid var(--main-cyan-color);
-  font-family: "Lemonada", cursive;
+  font-family: var(--main-font);
 }
-nav#main-nav .container ul.features li:first-child input[type=text].active {
+.paddinger nav#main-nav .container ul.features li:first-child input[type=text].active {
   width: 200px;
   padding-left: 45px;
 }
 
 /* End Main Nav */
+/* Start Nav With Logo */
+.logo {
+  margin-top: var(--little-separator);
+}
+.logo img {
+  max-width: 50%;
+}
+@media (max-width: 768px) {
+  .logo img {
+    max-width: 100%;
+  }
+}
+
+nav.links {
+  margin-top: var(--margin-top);
+  height: 50px;
+}
+@media (max-width: 768px) {
+  nav.links {
+    display: none;
+  }
+}
+nav.links .container ul {
+  --home-space: 40px;
+  position: relative;
+  margin-right: var(--home-space);
+  border: 3px solid var(--light-shadow-color);
+  border-end-end-radius: var(--circle-border-radius);
+  border-start-end-radius: var(--circle-border-radius);
+  display: flex;
+  padding-right: var(--home-space);
+}
+nav.links .container ul .home, nav.links .container ul .home-2 {
+  height: calc(100% + 3px);
+  aspect-ratio: 1/1;
+  background: white;
+  border-left: 3px solid #aaa;
+  position: absolute;
+  border-radius: var(--circle-border-radius);
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%) translateX(50%) scale(1.4);
+}
+nav.links .container ul .home-2 {
+  background: var(--main-cyan-color);
+  transform: translateY(-50%) translateX(65%) scale(1.4);
+  border: none;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  color: white;
+  transition: transform var(--main-transition);
+  border: 2px solid #a9a9a9;
+}
+nav.links .container ul .home-2 > svg {
+  position: absolute;
+  transform: scaleX(0.2) scaleY(0.4);
+  bottom: 10px;
+  left: -3px;
+  display: none;
+}
+nav.links .container ul .home-2:hover {
+  transform: translateY(-50%) translateX(65%) scale(1.6);
+  background: var(--white);
+  color: var(--main-cyan-color);
+}
+nav.links .container ul .home-2:hover > svg {
+  display: block;
+}
+nav.links .container ul li {
+  font-size: 1.2rem;
+  border-inline-end: 3px solid var(--light-shadow-color);
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: row-reverse;
+  font-family: var(--main-font);
+  padding: 10px 5px;
+  position: relative;
+  color: var(--black);
+  font-size: 1.1rem;
+}
+nav.links .container ul li::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  background: var(--color);
+  bottom: 0;
+  left: 0;
+  transition: var(--main-transition);
+}
+nav.links .container ul li:hover:before {
+  width: 100%;
+}
+nav.links .container ul li a {
+  color: var(--black);
+  text-decoration: none;
+  position: relative;
+  display: block;
+}
+nav.links .container ul li i {
+  padding: 0 5px;
+}
 
 /*# sourceMappingURL=style.css.map */
