@@ -14,8 +14,10 @@ html{
     --white: #ffffff;
     --light-shadow-color: #aaa;
     --heavy-bg-color: #0001;
+    --dark-for-light: #444444;
     --black: #000;
     --gray: #aaa;
+    --light-gray: #eee;
     --main-border-radius: 10px;
     --circle-border-radius: 50px;
     --main-transition: 0.3s;
@@ -236,7 +238,7 @@ nav.links{
         display: none;
     }
     .container{
-        ul{
+        > ul{
             --home-space: 40px;
             position: relative;
             .home,.home-2{
@@ -287,7 +289,7 @@ nav.links{
             border-start-end-radius: var(--circle-border-radius);
             display: flex;
             padding-right: var(--home-space);
-            li{
+            > li{
                 font-size: 1.2rem;
                 border-inline-end: 3px solid var(--light-shadow-color);
                 text-transform: uppercase;
@@ -320,7 +322,110 @@ nav.links{
                 i{
                     padding: 0 5px;
                 }
+                ul.brunch{
+                    position: absolute;
+                    background: var(--light-gray);
+                    top: 100%;
+                    min-width: 100%;
+                    left: 0;
+                    z-index: 1000000000000000000000000000000000000000000;
+                    display: none;
+                    flex-direction: column;
+                    li{
+                        padding: 10px;
+                        transition: var(--main-transition);
+                        &:hover{
+                            padding: 10px 20px;
+                            background: var(--light-shadow-color);
+                        }
+                    }
+                    :not(:last-child){
+                        border-bottom: 3px solid var(--white);
+                    }
+                }
+                &:hover ul.brunch{
+                    display: flex;
+                }
             }
         }
     }
 }
+/* End Nav With Logo */
+/* Start Carousel */
+header#carousel{
+    padding-bottom: var(--margin-top);
+    border-bottom: 7px solid var(--dark-for-light);
+    @media (max-width: 768px) {
+        display: none;
+    }
+    margin-top: var(--little-separator);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    #next,#prev{
+        position: absolute;
+        top: 50%;
+        font-size: 2.5rem;
+        user-select: none;
+        color: var(--main-cyan-color);
+        border: none;
+        padding: 10px;
+        transition: var(--main-transition);
+        outline: none;
+        cursor: pointer;
+        &:hover{
+            opacity: .8;
+        }
+    }
+    #next{
+        left: 0;
+        z-index: 10000000000000000000000000;
+    }
+    #prev{
+        right: 0;
+    }
+    .carousel{
+        width: 600px;
+        height: 400px;
+        position: relative;
+        border-radius: var(--main-border-radius);
+        overflow: hidden;
+        img{
+            position: absolute;
+            max-width: 100%;
+            max-height: 100%;
+            min-height: 100%;
+            opacity: 0;
+            transform: scale(0) rotate(-45deg);
+            transition: var(--main-transition);
+        }
+        img.active{
+            opacity: 1;
+            transform: scale(1) rotate(0deg);
+        }
+    }
+    #bullets{
+        position: absolute;
+        background: #0000;
+        height: 10%;
+        bottom: 0;
+        width: 100%;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .bullet{
+            width:  20px;
+            height: 20px;
+            border: 2px solid white;
+            margin-left: 10px;
+            border-radius: var(--circle-border-radius);
+            &.active{
+                background: white;
+            }
+        }
+    }
+}
+/* End Carousel */

@@ -15,8 +15,10 @@ html {
   --white: #ffffff;
   --light-shadow-color: #aaa;
   --heavy-bg-color: #0001;
+  --dark-for-light: #444444;
   --black: #000;
   --gray: #aaa;
+  --light-gray: #eee;
   --main-border-radius: 10px;
   --circle-border-radius: 50px;
   --main-transition: 0.3s;
@@ -257,7 +259,7 @@ nav.links {
     display: none;
   }
 }
-nav.links .container ul {
+nav.links .container > ul {
   --home-space: 40px;
   position: relative;
   margin-right: var(--home-space);
@@ -267,7 +269,7 @@ nav.links .container ul {
   display: flex;
   padding-right: var(--home-space);
 }
-nav.links .container ul .home, nav.links .container ul .home-2 {
+nav.links .container > ul .home, nav.links .container > ul .home-2 {
   height: calc(100% + 3px);
   aspect-ratio: 1/1;
   background: white;
@@ -278,7 +280,7 @@ nav.links .container ul .home, nav.links .container ul .home-2 {
   top: 50%;
   transform: translateY(-50%) translateX(50%) scale(1.4);
 }
-nav.links .container ul .home-2 {
+nav.links .container > ul .home-2 {
   background: var(--main-cyan-color);
   transform: translateY(-50%) translateX(65%) scale(1.4);
   border: none;
@@ -289,22 +291,22 @@ nav.links .container ul .home-2 {
   transition: transform var(--main-transition);
   border: 2px solid #a9a9a9;
 }
-nav.links .container ul .home-2 > svg {
+nav.links .container > ul .home-2 > svg {
   position: absolute;
   transform: scaleX(0.2) scaleY(0.4);
   bottom: 10px;
   left: -3px;
   display: none;
 }
-nav.links .container ul .home-2:hover {
+nav.links .container > ul .home-2:hover {
   transform: translateY(-50%) translateX(65%) scale(1.6);
   background: var(--white);
   color: var(--main-cyan-color);
 }
-nav.links .container ul .home-2:hover > svg {
+nav.links .container > ul .home-2:hover > svg {
   display: block;
 }
-nav.links .container ul li {
+nav.links .container > ul > li {
   font-size: 1.2rem;
   border-inline-end: 3px solid var(--light-shadow-color);
   text-transform: uppercase;
@@ -316,7 +318,7 @@ nav.links .container ul li {
   color: var(--black);
   font-size: 1.1rem;
 }
-nav.links .container ul li::before {
+nav.links .container > ul > li::before {
   content: "";
   position: absolute;
   width: 0%;
@@ -326,17 +328,124 @@ nav.links .container ul li::before {
   left: 0;
   transition: var(--main-transition);
 }
-nav.links .container ul li:hover:before {
+nav.links .container > ul > li:hover:before {
   width: 100%;
 }
-nav.links .container ul li a {
+nav.links .container > ul > li a {
   color: var(--black);
   text-decoration: none;
   position: relative;
   display: block;
 }
-nav.links .container ul li i {
+nav.links .container > ul > li i {
   padding: 0 5px;
 }
+nav.links .container > ul > li ul.brunch {
+  position: absolute;
+  background: var(--light-gray);
+  top: 100%;
+  min-width: 100%;
+  left: 0;
+  z-index: 999999999999999900000000000000000000000000;
+  display: none;
+  flex-direction: column;
+}
+nav.links .container > ul > li ul.brunch li {
+  padding: 10px;
+  transition: var(--main-transition);
+}
+nav.links .container > ul > li ul.brunch li:hover {
+  padding: 10px 20px;
+  background: var(--light-shadow-color);
+}
+nav.links .container > ul > li ul.brunch :not(:last-child) {
+  border-bottom: 3px solid var(--white);
+}
+nav.links .container > ul > li:hover ul.brunch {
+  display: flex;
+}
+
+/* End Nav With Logo */
+/* Start Carousel */
+header#carousel {
+  padding-bottom: var(--margin-top);
+  border-bottom: 7px solid var(--dark-for-light);
+  margin-top: var(--little-separator);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+@media (max-width: 768px) {
+  header#carousel {
+    display: none;
+  }
+}
+header#carousel #next, header#carousel #prev {
+  position: absolute;
+  top: 50%;
+  font-size: 2.5rem;
+  user-select: none;
+  color: var(--main-cyan-color);
+  border: none;
+  padding: 10px;
+  transition: var(--main-transition);
+  outline: none;
+  cursor: pointer;
+}
+header#carousel #next:hover, header#carousel #prev:hover {
+  opacity: 0.8;
+}
+header#carousel #next {
+  left: 0;
+  z-index: 9999999999999999000000000;
+}
+header#carousel #prev {
+  right: 0;
+}
+header#carousel .carousel {
+  width: 600px;
+  height: 400px;
+  position: relative;
+  border-radius: var(--main-border-radius);
+  overflow: hidden;
+}
+header#carousel .carousel img {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 100%;
+  opacity: 0;
+  transform: scale(0) rotate(-45deg);
+  transition: var(--main-transition);
+}
+header#carousel .carousel img.active {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+header#carousel #bullets {
+  position: absolute;
+  background: #0000;
+  height: 10%;
+  bottom: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header#carousel #bullets .bullet {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  margin-left: 10px;
+  border-radius: var(--circle-border-radius);
+}
+header#carousel #bullets .bullet.active {
+  background: white;
+}
+
+/* End Carousel */
 
 /*# sourceMappingURL=style.css.map */

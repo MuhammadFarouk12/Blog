@@ -26,7 +26,7 @@
               <li><i class="fas fa-laptop-code"></i> <a href="">PC APPLICATIONS</a> </li>
               <li><i class="fas fa-gamepad"></i> <a href="">GAMES</a></li>
               <li><i class="fas fa-database"></i> <a href="">DATABASE </a></li>
-              <li><i class="fas fa-stopwatch"></i> <a href="">HACKING  </a></li>
+              <li><i class="fas fa-user-secret"></i> <a href="">HACKING  </a></li>
             </ul>
             <li class="border"><i class="fas fa-headphones-alt"></i> <a href="">اتصل بنا</a></li>
             <li id="li"><i class="fas fa-handshake"></i> <a href="">إتفاقية المستخدم</a></li>
@@ -48,13 +48,40 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="51.068" height="55.836" viewBox="0 0 51.068 55.836">
               <path id="Icon_weather-smoke" data-name="Icon weather-smoke" d="M7.608,28.97a11.811,11.811,0,0,1,2.669-7.557,11.584,11.584,0,0,1,6.747-4.228A14.711,14.711,0,0,1,31.418,5.64a14.285,14.285,0,0,1,9.056,3.149,14.372,14.372,0,0,1,5.188,8.067h.81a11.839,11.839,0,0,1,8.636,3.539,11.618,11.618,0,0,1,3.568,8.546,11.82,11.82,0,0,1-1.11,5.1,12.27,12.27,0,0,1-3.089,4.108v.09A7.523,7.523,0,0,1,52.8,43a7.292,7.292,0,0,1-4.2,2.669,9.353,9.353,0,0,1-7.617,7.137,5.243,5.243,0,0,1-3.928,8.666,4.941,4.941,0,0,1-3.688-1.559A5.094,5.094,0,0,1,31.838,56.2a4.893,4.893,0,0,1,.3-1.709h-.3A6.451,6.451,0,0,1,25.45,48.1a5.811,5.811,0,0,1,.9-3.209,7.448,7.448,0,0,1-3.359-3.748H19.153v-.03a12.075,12.075,0,0,1-8.187-3.808A11.57,11.57,0,0,1,7.608,28.97Z" transform="translate(-7.608 -5.64)" fill="#706e6e"></path>
             </svg></a>
-          <li data-color="var(--main-cyan-color)"><a href="">Web Development</a> <i class="fab fa-html5"></i></li>
-          <li data-color="#981CC5"><a href="">PC application</a> <i class="fas fa-laptop-code"></i></li>
+          <li data-color="var(--main-cyan-color)"><a href="">Web Development</a> <i class="fab fa-html5"></i>
+            <ul class="brunch">
+              <li><a href="">Back-end</a></li>
+              <li><a href="">Fron-end</a></li>
+            </ul>
+          </li>
+          <li data-color="#981CC5"><a href="">PC application</a> <i class="fas fa-laptop-code"></i>
+            <ul class="brunch">
+              <li><a href="">C++</a></li>
+              <li><a href="">C#</a></li>
+            </ul>
+          </li>
           <li data-color="#FFBC05"><a href="">Games</a> <i class="fas fa-gamepad"></i></li>
-          <li data-color="red"><a href="">database</a> <i class="fas fa-server"></i></li>
-          <li data-color="black"><a href="">hacking</a> <i class="fas fa-user-secret"></i></li>
+          <li data-color="red"><a href="">database</a> <i class="fas fa-server"></i>
+            <ul class="brunch">
+              <li><a href="">Oracle</a></li>
+              <li><a href="">MS SQL Server</a></li>
+            </ul>
+          </li>
+          <li data-color="black"><a href="">hacking</a> <i class="fas fa-user-secret"></i>
+            <ul class="brunch">
+              <li><a href="">Linux</a></li>
+              <li><a href="">Networks</a></li>
+            </ul>
+          </li>
         </ul>
       </div>
     </nav>
+    <header id="carousel">
+      <div class="carousel">
+        <button id="next"><i class="fas fa-angle-double-left"></i></button><img class="active" src="images/carousel/slider-1.jpg" alt="dark chair"><img src="images/carousel/slider-2.png" alt="programmin codes"><img src="images/carousel/slider-3.jpg" alt="a car"><img src="images/carousel/slider-4.jpg" alt="a car"><img src="images/carousel/slider-5.jpg" alt="a car"><img src="images/carousel/slider-6.jpg" alt="a car">
+        <button id="prev"><i class="fas fa-angle-double-right"></i></button>
+        <div id="bullets"></div>
+      </div>
+    </header>
   </body>
 </html>
