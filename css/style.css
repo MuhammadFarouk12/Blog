@@ -71,6 +71,7 @@ html {
   .paddinger nav#main-nav {
     position: fixed;
     top: 0;
+    z-index: 1;
   }
 }
 .paddinger nav#main-nav .container {
@@ -466,6 +467,36 @@ section#lastArticles .container.lastArtcicles {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 768px) {
+  section#lastArticles .container.lastArtcicles {
+    flex-direction: column;
+  }
+  section#lastArticles .container.lastArtcicles article {
+    flex-direction: column !important;
+    width: 100% !important;
+    margin: var(--little-separator) 0 !important;
+  }
+  section#lastArticles .container.lastArtcicles article .text {
+    margin: var(--little-separator) 0 !important;
+    width: 80% !important;
+  }
+  section#lastArticles .container.lastArtcicles article .text footer {
+    margin: var(--little-separator) 0 !important;
+  }
+  section#lastArticles .container.lastArtcicles article > a {
+    width: 100% !important;
+    aspect-ratio: 1/0.6 !important;
+  }
+  section#lastArticles .container.lastArtcicles article > a .thumnail {
+    width: 100% !important;
+    height: 100% !important;
+    aspect-ratio: 1/0.6;
+  }
+  section#lastArticles .container.lastArtcicles article * {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
 section#lastArticles .container.lastArtcicles .lastArticlesSide {
   flex: 5;
 }
@@ -479,7 +510,6 @@ section#lastArticles .container.lastArtcicles .lastArticlesSide article .thumnai
   background-position: center !important;
   border-radius: var(--main-border-radius) !important;
   background-repeat: no-repeat !important;
-  background-color: red !important;
   width: 300px;
   margin-left: 20px;
   margin-bottom: var(--little-separator);
@@ -574,11 +604,46 @@ section#lastArticles .container.lastArtcicles .bussenissSide .social .icons i:nt
 section#lastArticles .container.lastArtcicles .bussenissSide .social .icons i:nth-child(4) {
   background: #37AEE2;
 }
+section#lastArticles .container.lastArtcicles .bussenissSide .social .icons i .first {
+  background: var(--main-cyan-color);
+  display: none;
+}
 section#lastArticles .container.lastArtcicles .bussenissSide .social .icons i:hover {
   box-shadow: 5px 5px 5px var(--dark-for-light);
   position: relative;
   z-index: 100;
   transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  section#lastArticles .container.lastArtcicles .bussenissSide .social {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+  }
+  section#lastArticles .container.lastArtcicles .bussenissSide .social .icons {
+    grid-template-columns: 1fr;
+  }
+  section#lastArticles .container.lastArtcicles .bussenissSide .social .icons i {
+    display: none;
+    padding: 10px;
+    border-radius: var(--circle-border-radius) !important;
+    margin-top: 5px;
+    transform-origin: center center;
+  }
+  section#lastArticles .container.lastArtcicles .bussenissSide .social .icons i:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 0;
+  }
+  section#lastArticles .container.lastArtcicles .bussenissSide .social .icons i.active {
+    display: grid;
+  }
+  section#lastArticles .container.lastArtcicles .bussenissSide .social .icons .first {
+    display: grid;
+    background: var(--main-cyan-color);
+  }
+  section#lastArticles .container.lastArtcicles .bussenissSide .social h4 {
+    display: none;
+  }
 }
 section#lastArticles .container.lastArtcicles .bussenissSide .ads .ad {
   margin: var(--little-separator) 0;
@@ -586,6 +651,12 @@ section#lastArticles .container.lastArtcicles .bussenissSide .ads .ad {
   aspect-ratio: 1/1;
   background: url(http://placehold.it/1000/eee) center;
   background-size: contain;
+}
+@media (max-width: 768px) {
+  section#lastArticles .container.lastArtcicles .bussenissSide .ads .ad {
+    width: 60%;
+    margin: auto;
+  }
 }
 section#lastArticles .container.lastArtcicles .hashtags {
   max-width: 100%;

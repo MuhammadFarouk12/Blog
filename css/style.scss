@@ -56,6 +56,7 @@ html{
         @media (max-width: 768px) {
             position: fixed;
             top: 0;
+            z-index: 1;
         }
         width: 100%;
         .container{
@@ -447,6 +448,34 @@ section#lastArticles{
     .container.lastArtcicles{
         font-family: var(--main-font);
         display: flex;
+        @media (max-width: 768px) {
+            flex-direction: column;
+            article{
+                flex-direction: column !important;
+                width: 100% !important;
+                margin: var(--little-separator) 0 !important;
+                .text{
+                    margin: var(--little-separator) 0 !important;
+                    width: 80% !important;
+                    footer{
+                        margin: var(--little-separator) 0 !important;
+                    }
+                }
+                > a{
+                    width: 100% !important;
+                    aspect-ratio: 1/.6 !important;
+                    .thumnail{
+                        width: 100% !important;
+                        height: 100% !important;
+                        aspect-ratio: 1/.6;
+                    }
+                }
+                *{
+                    margin-top: 0 !important;
+                    margin-bottom: 0 !important;
+                }
+            }
+        }
         // background: red;
         justify-content: space-between;
         .lastArticlesSide{
@@ -461,7 +490,7 @@ section#lastArticles{
                     background-position: center !important;
                     border-radius: var(--main-border-radius) !important;
                     background-repeat: no-repeat !important;
-                    background-color: red !important;
+                    // background-color: red !important;
                     width: 300px;
                     margin-left: 20px;
                     margin-bottom: var(--little-separator);
@@ -556,6 +585,10 @@ section#lastArticles{
                         &:nth-child(4){
                             background: #37AEE2;
                         }
+                        .first{
+                            background: var(--main-cyan-color);
+                            display: none;
+                        }
                         &:hover{
                             box-shadow: 5px 5px 5px var(--dark-for-light);
                             position: relative;
@@ -564,11 +597,44 @@ section#lastArticles{
                         }
                     }
                 }
+                @media (max-width: 768px) {
+                    position: fixed;
+                    bottom: 20px;
+                    left: 20px;
+                    .icons{
+                        grid-template-columns: 1fr;
+                        i{
+                            display: none;
+                            padding: 10px;
+                            border-radius: var(--circle-border-radius) !important;
+                            margin-top: 5px;
+                            transform-origin: center center;
+                            &:hover{
+                                transform: scale(1.1);
+                                box-shadow: 0 0 0 0 ;
+                            }
+                        }
+                        i.active{
+                            display: grid;
+                        }
+                        .first{
+                            display: grid;
+                            background: var(--main-cyan-color);
+                        }
+                    }
+                    h4{
+                        display: none;
+                    }
+                }
             }
             .ads{
                 .ad{
                     margin: var(--little-separator) 0;
                     width: 100%;
+                    @media (max-width: 768px) {
+                        width: 60%;
+                        margin: auto;
+                    }
                     aspect-ratio: 1/1;
                     background: url(http://placehold.it/1000/eee) center;
                     background-size: contain;

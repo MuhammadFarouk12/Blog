@@ -42,3 +42,12 @@ setInterval(function(){
     changeBy(current)
 }, 5000)
 // End Carousel
+// Start Icons
+let socialIcons = Array.from(document.querySelectorAll(".container.lastArtcicles .bussenissSide .social .icons i"));
+document.querySelector('.first').onclick = _=>{
+    socialIcons.forEach(e=>{
+        e.classList.toggle('active');
+    })
+}
+console.log(socialIcons);
+// End Icons
