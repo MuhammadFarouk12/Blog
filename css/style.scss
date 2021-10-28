@@ -7,12 +7,13 @@
 }
 html{
     font-size: 12px;
-    // height: 200vh;
+    scroll-behavior: smooth;
 }
 :root{
     --main-cyan-color: #2A93B9;
     --white: #ffffff;
     --light-shadow-color: #aaa;
+    --heavy-shadow-color: rgb(50, 50, 50);
     --heavy-bg-color: #0001;
     --dark-for-light: #444444;
     --black: #000;
@@ -40,6 +41,10 @@ html{
     @media (min-width: 1200px) {
         width: 1130px;
     }
+}
+.container.separator{
+    border-bottom: 4px solid var(--dark-for-light);
+    margin-top: var(--little-separator);
 }
 /* End Golbal*/
 /* Start Main Nav */
@@ -429,10 +434,6 @@ header#carousel{
             }
         }
     }
-    .container.separator{
-        border-bottom: 4px solid var(--dark-for-light);
-        margin-top: var(--margin-top);
-    }
 }
 /* End Carousel */
 /* Start Last Topics */
@@ -561,11 +562,13 @@ section#lastArticles{
             }
             .social{
                 .icons{
-                    margin: var(--little-separator) 0;
+                    margin: var(--little-separator) auto;
                     display: grid;
                     grid-template-columns: 1fr 1fr;
-                    width: 100%;
-                    aspect-ratio: 1/1;
+                    width: 80%;
+                    @media (min-width: 768px) {
+                        aspect-ratio: 1/1.5;
+                    }
                     i{
                         display: grid;
                         place-items: center;
@@ -607,7 +610,7 @@ section#lastArticles{
                             display: none;
                             padding: 10px;
                             border-radius: var(--circle-border-radius) !important;
-                            margin-top: 5px;
+                            margin-top: 10px;
                             transform-origin: center center;
                             &:hover{
                                 transform: scale(1.1);
@@ -620,6 +623,7 @@ section#lastArticles{
                         .first{
                             display: grid;
                             background: var(--main-cyan-color);
+                            box-shadow: 0px 0px 5px black !important;
                         }
                     }
                     h4{
@@ -668,5 +672,105 @@ section#lastArticles{
             }
         }
     }
-}
+    .container.contents{
+        direction: ltr;
+        font-family: var(--main-font);
+        display: flex;
+        justify-content: center;
+        margin-block: var(--little-separator);
+        button,a{
+            width: 40px;
+            height: 40px;
+            border-radius: var(--circle-border-radius);
+            display: grid;
+            place-items: center;
+            background: var(--main-cyan-color);
+            border: 1px solid transparent;
+            color: white;
+            margin-right: 10px;
+            font-size: 1.5rem;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--main-transition);
+
+            &.active,&:hover{
+                background: transparent;
+                color: var(--main-cyan-color);
+                border: 1px solid var(--main-cyan-color);
+            }
+        }
+    }
+}   
 /* End Last Topics */
+/* Start Footer */
+footer#footer{
+    margin-top: var(--little-separator);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-family: var(--main-font);
+    background: var(--main-cyan-color);
+    @media (max-width: 768px) {
+        flex-flow: column;
+    }
+    > *{
+        flex: 1;
+    }
+    .whoAreWe{
+        color: white;
+        h2{
+            margin: var(--little-separator) 0;
+        }
+        p{
+            line-height: 1.5;
+        }
+    }
+    form.signIn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin-right: 30px;
+        input[name="email"] {
+            width: 100%;
+            padding: 10px 20px;
+            direction: ltr;
+            border-radius: var(--main-border-radius);
+            border: none;
+        }
+        input{
+            outline: none;
+            margin-top: var(--little-separator);
+            &[type="submit"]{
+                padding: 10px 20px;
+                font-size: 1.5rem;
+                border-radius: var(--main-border-radius);
+                color: var(--main-cyan-color);
+                background: white;
+                border: none;
+                &:hover{
+                    opacity: .9;
+                }
+            }
+        }
+        input[name="email"], input[type="submit"]:hover{
+            box-shadow: 0 5px 5px var(--heavy-shadow-color);
+        }
+    }
+}
+.toTop{
+    width: 61px;
+    height: 61px;
+    display: grid;
+    place-items: center;
+    font-size: 2.5rem;
+    box-shadow: 0 0 5px black;
+    border-radius: var(--circle-border-radius);
+    position: fixed;
+    bottom: 35px;
+    right: 20px;
+    color: white;
+    text-decoration: none;
+    background: var(--main-cyan-color);
+}
+/* End Footer */

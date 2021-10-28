@@ -49,5 +49,4 @@ document.querySelector('.first').onclick = _=>{
         e.classList.toggle('active');
     })
 }
-console.log(socialIcons);
 // End Icons

@@ -24,20 +24,21 @@ let articles = [
         writer: "محمد خالد",
     },
     {
-        thumnail: "images/articles/hacking.jpg",
-        name: "How To Hack Nasa With HTML",
-        summary: "Belive it or not, Nasa really can be hacked with HTML and CSS, Read This article to know how",
+        thumnail: "images/articles/stopschool.webp",
+        name: "Why You Sould Stop Studying in School or University Right Now",
+        summary: "Life is shorter than wasting it in school, whereas finally you will not gain any thing...",
         writer: "محمد خالد",
+        ltr: true,
     },
     {
-        thumnail: "images/articles/hacking.jpg",
+        thumnail: "images/articles/htmlandnasa.jpg",
         name: "How To Hack Nasa With HTML",
         summary: "Belive it or not, Nasa really can be hacked with HTML and CSS, Read This article to know how",
         writer: "محمد خالد",
     },
 ];
 let lastArticles = [articles[articles.length-1],articles[articles.length-2],articles[articles.length-3],articles[articles.length-4]];
-// Start Work Of Articles
+// Start Work Of Articles;
 const lastArticlesSection = document.querySelector(`section#lastArticles .container.lastArtcicles .lastArticlesSide`);
 lastArticles.forEach(lastArticle =>{
     let article = document.createElement('article');
@@ -45,7 +46,7 @@ lastArticles.forEach(lastArticle =>{
     <a href=''><div class='thumnail' style='background: url(${lastArticle.thumnail})'></div></a>
     <div class='text'>
         <h3>${lastArticle.name}</h2>
-        <p>${lastArticle.summary}</p>
+        <p dir='${lastArticle.direction?'ltr':'ltr'}'>${lastArticle.summary}</p>
         <footer>
             <a href=''>قراءة المزيد</a>
             <time datatime='2021-10-27'>2021-10-27</time>
@@ -61,4 +62,10 @@ hashes.forEach((hash,i)=>{
     hashSpan.innerHTML = `#${hash}`;
     hashSpan.classList.add('hash');
     document.querySelector('.hashes').append(hashSpan);
+});
+// End Work Of Artcicles;
+// Start footer contents;
+let contents = document.querySelectorAll('.container.contents a');
+contents.forEach((link, i)=>{
+    link.innerHTML = i+1;
 })
