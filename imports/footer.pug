@@ -2,6 +2,9 @@ footer#footer
     .whoAreWe
         h2 من نحن ؟
         p إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع.
+    .separator
     form(action="post").signIn
         input(type="email", name="email" placeholder="البريد الإلكتروني" required)
         input(type="submit" value='إرسال')
+footer#copyRights
+script copyRights.innerHTML = `جميع الحقوق محفوضة لدى <a href="index.html"> الغابة الذكية</a> &copy; ${new Date().getFullYear()}`

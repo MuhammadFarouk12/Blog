@@ -10,9 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
-  <title>الغابة الذكية | غابة المعرفة</title>
 </html>
-<body id="body">
+<body data-index="0">
   <div class="paddinger">
     <nav id="main-nav">
       <div class="container">
@@ -75,56 +74,5 @@
       </ul>
     </div>
   </nav>
-  <header id="carousel">
-    <div class="carousel">
-      <button id="next"><i class="fas fa-angle-double-left"></i></button><img class="active" src="images/carousel/slider-1-min.jpg" alt="dark chair"><img src="images/carousel/slider-2-min.jpg" alt="a car"><img src="images/carousel/slider-3-min.jpg" alt="a car"><img src="images/carousel/slider-4-min.jpg" alt="a car"><img src="images/carousel/slider-5-min.jpg" alt="a car">
-      <button id="prev"><i class="fas fa-angle-double-right"></i></button>
-      <div id="bullets"></div>
-    </div>
-    <div class="container separator"></div>
-  </header>
-  <section id="lastArticles" class='lastArticles'>
-    <div class="container">
-      <h2>آخر المواضيع</h2>
-    </div>
-    <div class="container lastArtcicles">
-      <div class="lastArticlesSide"></div>
-      <div class="bussenissSide">
-        <div class="social">
-          <h4 class="title">Social Media</h4>
-          <div class="icons"><i class="fab fa-facebook"></i><i class="fab fa-instagram"></i><i class="fab fa-twitter"></i><i class="fab fa-telegram-plane"></i><i class="first fas fa-heart"></i></div>
-        </div>
-        <div class="ads">
-          <h4 class="title">Advertisment</h4>
-          <div class="ad"></div>
-        </div>
-        <div class="hashtags">
-          <h4 class="title">Hashtags</h4>
-          <div class="hashes"></div>
-        </div>
-      </div>
-    </div>
-    <div class="container contents">
-      <button><</button><a class="active" href=""></a><a href=""></a><a href=""></a>
-      <button>...</button>
-      <button>/></button>
-    </div>
-    <div class="container separator"></div>
-  </section>
-  <footer id="footer">
-    <div class="whoAreWe">
-      <h2>من نحن ؟</h2>
-      <p>إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع.</p>
-    </div>
-    <div class="separator"></div>
-    <form class="signIn" action="post">
-      <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-      <input type="submit" value="إرسال">
-    </form>
-  </footer>
-  <footer id="copyRights"></footer>
-  <script>copyRights.innerHTML = `جميع الحقوق محفوضة لدى <a href="index.html"> الغابة الذكية</a> &copy; ${new Date().getFullYear()}`</script><a class="toTop" href="#body"><i class="fas fa-angle-double-up"></i></a>
-  <script src="js/icons.js"></script>
-  <script src="js/carousel.js"></script>
-  <script src="js/main.js"></script>
+  <script src="js/article.js"></script>
 </body>

@@ -8,6 +8,7 @@
 html{
     font-size: 12px;
     scroll-behavior: smooth;
+    direction: rtl;
 }
 :root{
     --main-cyan-color: #2A93B9;
@@ -45,6 +46,12 @@ html{
 .container.separator{
     border-bottom: 4px solid var(--dark-for-light);
     margin-top: var(--little-separator);
+}
+.title-2{
+    padding: 20px 20px 0 0;
+    border-right: 10px solid var(--main-cyan-color);
+    margin-bottom: 20px;
+    margin-top: 10px;
 }
 /* End Golbal*/
 /* Start Main Nav */
@@ -437,9 +444,9 @@ header#carousel{
 }
 /* End Carousel */
 /* Start Last Topics */
-section#lastArticles{
+.lastArticles{
     .container{
-        > h2{
+        > h2,h1{
             padding: 20px 20px 0 0;
             border-right: 10px solid var(--main-cyan-color);
             margin-bottom: 20px;
@@ -449,6 +456,7 @@ section#lastArticles{
     .container.lastArtcicles{
         font-family: var(--main-font);
         display: flex;
+        align-items: flex-start;
         @media (max-width: 768px) {
             flex-direction: column;
             article{
@@ -640,8 +648,8 @@ section#lastArticles{
                         margin: auto;
                     }
                     aspect-ratio: 1/1;
-                    background: url(http://placehold.it/1000/eee) center;
-                    background-size: contain;
+                    // background: url(http://placehold.it/1000/eee) center;
+                    // background-size: contain;
                 }
             }
         }
@@ -692,7 +700,6 @@ section#lastArticles{
             text-decoration: none;
             cursor: pointer;
             transition: var(--main-transition);
-
             &.active,&:hover{
                 background: transparent;
                 color: var(--main-cyan-color);
@@ -731,12 +738,17 @@ footer#footer{
         justify-content: center;
         flex-direction: column;
         margin-right: 30px;
+        font-size: 1rem;
+        @media (max-width: 768px) {
+            margin: 0;
+        }
         input[name="email"] {
             width: 100%;
             padding: 10px 20px;
             direction: ltr;
             border-radius: var(--main-border-radius);
             border: none;
+            margin-bottom: var(--little-separator);
         }
         input{
             outline: none;
@@ -748,6 +760,7 @@ footer#footer{
                 color: var(--main-cyan-color);
                 background: white;
                 border: none;
+                cursor: pointer;
                 &:hover{
                     opacity: .9;
                 }
@@ -773,4 +786,145 @@ footer#footer{
     text-decoration: none;
     background: var(--main-cyan-color);
 }
+footer#copyRights{
+    padding: calc(var(--little-separator) / 2) 0;
+    background: var(--white);
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: var(--main-font);
+    color: var(--black);
+    a{
+        text-decoration: none;
+        color: var(--main-cyan-color);
+        display: inline-block;
+        padding: 0 5px;
+    }
+}
 /* End Footer */
+/* Start Options*/
+section.container#page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .page-icon{
+        text-align: center;
+        font-size: 25rem;
+        @media(max-width: 768px){
+            font-size: 15rem;
+        }
+        display: block;
+        margin: var(--margin-top) 0;
+        color: var(--dark-for-light)
+    }
+    h2.title-page{
+        text-align: center;
+        margin-bottom: var(--margin-top);
+    }
+    form.page-form{
+        width: 500px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        input:not([type='submit']),textarea{
+            margin: 10px 0;
+            padding: 10px 20px;
+            border-radius: var(--main-border-radius);
+            border: 2px solid var(--dark-for-light);
+            outline: none;
+            width: 100%;
+            &:focus-within{
+                box-shadow: 0px 0px 10px var(--main-cyan-color);
+                border-color: var(--main-cyan-color);
+                color: var(--main-cyan-color);
+            }
+            transition: var(--main-transition);
+        }
+        textarea{
+            height: 300px;
+            font-size: 1.2rem;
+            resize: none;
+        }
+        button{
+            padding: 0;
+            margin: 0;
+            display: inline;
+        }
+        > a, input[type='submit']{
+            transition: var(--main-transition);
+            width: fit-content;
+            width: -moz-fit-content;
+            cursor: pointer;
+            background: var(--main-cyan-color);
+            margin: 10px 0;
+            padding: 15px 40px;
+            border-radius: var(--main-border-radius);
+            border: 2px solid var(--main-cyan-color);
+            outline: none;
+            font-size: 1.5rem;
+            color: white !important;
+            text-decoration: none;
+            color: var(--main-cyan-color);
+            display: block;
+            &:hover{
+                color: var(--main-cyan-color) !important;
+                background: white;
+                font-weight: bold;
+                box-shadow: inset 3px 3px 5px var(--light-shadow-color);
+            }
+        }
+        @media (max-width: 600px) {
+            width: 100%;
+        }
+    }
+}
+/* End Options*/
+/* Start Article */
+.thumCont{
+    width: 100%;
+    margin-top: var(--margin-top);
+    padding-bottom: var(--little-separator);
+    .thumImg{
+        width: 100%;
+        height: 400px;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+    }
+}
+.article-content{
+    border: 2px solid var(--dark-for-light);
+    border-radius: var(--main-border-radius);
+    margin: 40px;
+    padding: 20px;
+    line-height: 2;
+    max-height: 620px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+        width: 0px;
+    }
+}
+/* End Article */
+/* Start Comment Section */
+form.comment-form{
+    width: 60%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    input[type='text']{
+
+    }
+    input[type='email']{
+
+    }
+    textarea{
+
+    }
+    input[type='text'],
+    input[type='email'],
+    textarea{
+        
+    }
+}
+/* End Comment Section */

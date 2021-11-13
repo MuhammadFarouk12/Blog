@@ -1,7 +1,6 @@
 doctype html
-html(lang="en" dir="rtl")
-    head
-        include imports/head.pug
+html(lang="ar" dir='rtl')
+    include imports/head.pug
         title الغابة الذكية | غابة المعرفة
     body#body
         include imports/nav-with-logo.pug
@@ -42,4 +41,7 @@ html(lang="en" dir="rtl")
             include imports/counterPages.pug
         include imports/footer.pug
         include imports/toTop.pug
+        script(src='js/icons.js')
+        script(src='js/carousel.js')
+        script(src='js/main.js')
         //- End Last Topics
