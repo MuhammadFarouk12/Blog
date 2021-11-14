@@ -197,6 +197,7 @@ html.dark {
     transition: var(--main-transition);
     border-bottom: 1px solid var(--light-shadow-color);
     padding: 10px 0;
+    color: var(--black) !important;
   }
   .paddinger nav#main-nav .container ul.options li:hover {
     background: var(--heavy-bg-color);
@@ -1098,5 +1099,29 @@ textarea {
   background-position: center;
   margin-left: 10px;
   border-radius: var(--main-border-radius);
+}
+#error{
+  text-align: center;
+  font-family: var(--main-font);
+  color: var(--main-cyan-color);
+}
+.dark #error h1{
+  color: #FFBC05;
+}
+#error .error{
+  user-select: none;
+  font-size: 20rem;
+  margin: calc(var(--margin-top)) 0;
+}
+@media (max-width: 768px) {
+  #error .error{
+    font-size: 10rem;
+  }
+}
+#error a{
+  margin: 0 auto;
+}
+#error h2, #error a{
+  margin-top: 1rem;
 }
 /*# sourceMappingURL=style.css.map */

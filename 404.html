@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300;400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>This Page Is Not Found</title>
+  </head>
+  <body>
+    <div class="paddinger">
+      <nav id="main-nav">
+        <div class="container">
+          <div class="bars" id="burger"><span> </span><span> </span><span></span></div>
+          <ul class="options" id="options">
+            <ul class="sections">
+              <li><i class="fas fa-home"></i> <a href="index.html">الصفحة الرئيسية</a></li>
+              <li><i class="fab fa-html5"></i> <a href="">Web DEVELOPMENT</a></li>
+              <li><i class="fas fa-laptop-code"></i> <a href="">PC APPLICATIONS</a> </li>
+              <li><i class="fas fa-gamepad"></i> <a href="">GAMES</a></li>
+              <li><i class="fas fa-database"></i> <a href="">DATABASE </a></li>
+              <li><i class="fas fa-user-secret"></i> <a href="">HACKING  </a></li>
+            </ul>
+            <li class="border"><i class="fas fa-headphones-alt"></i> <a href="contactUs.html">اتصل بنا</a></li>
+            <li id="li"><i class="fas fa-handshake"></i> <a href="agreement.html">إتفاقية المستخدم</a></li>
+            <li><i class="fas fa-user-lock"></i> <a href="policy.html">سياسة الخصوصية</a></li>
+          </ul>
+          <ul class="features">
+            <li id="mainSearch">
+              <input type="text">
+            </li>
+            <li id="changeTheme"><i class="far fa-sun"></i></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <script src="js/main-nav.js"></script>
+    <main id="error">
+        <h1 class="error">4<i class="far fa-frown-open"></i>4</h1>
+        <h2>
+            أووبس !
+        </h2>
+        <h2>
+            عذرا هذه الصفحة غير موجودة
+        </h2>
+        <a href="index.html" class="btn">العودة إلى الرئيسية</a>
+    </main>
+    <footer id="footer">
+      <div class="whoAreWe">
+        <h2>من نحن ؟</h2>
+        <p>إذا كنت تحتاج إلى عدد أكبر من الفقرات يتيح لك مولد النص العربى زيادة عدد الفقرات كما تريد، النص لن يبدو مقسما ولا يحوي أخطاء لغوية، مولد النص العربى مفيد لمصممي المواقع على وجه الخصوص، حيث يحتاج العميل فى كثير من الأحيان أن يطلع على صورة حقيقية لتصميم الموقع.</p>
+      </div>
+      <div class="separator"></div>
+      <form class="signIn" action="post">
+        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
+        <input type="submit" value="إرسال">
+      </form>
+    </footer>
+    <footer id="copyRights"></footer>
+    <script>copyRights.innerHTML = `جميع الحقوق محفوضة لدى <a href="index.html"> الغابة الذكية</a> &copy; ${new Date().getFullYear()}`</script>
+  </body>
+</html>
