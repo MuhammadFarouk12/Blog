@@ -81,7 +81,7 @@ html.dark {
   box-shadow: 0px 0px 10px var(--main-cyan-color);
   border-color: var(--main-cyan-color);
 }
-.btn{
+.btn.btn.btn{
   transition: var(--main-transition);
   width: fit-content;
   width: -moz-fit-content;
@@ -97,10 +97,12 @@ html.dark {
   text-decoration: none;
   color: var(--main-cyan-color);
   display: block;
+  font-family: var(--main-font);
+  font-size: 1rem !important;
 }
-.btn:hover{
+.btn.btn.btn:hover{
   color: var(--main-cyan-color) !important;
-  background: var(--white);
+  background: transparent !important;
   font-weight: bold;
   /* box-shadow: inset 3px 3px 5px var(--light-shadow-color); */
 }
@@ -123,7 +125,7 @@ html.dark {
   .paddinger nav#main-nav {
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 1000;
   }
 }
 .paddinger nav#main-nav .container {
@@ -237,6 +239,7 @@ html.dark {
 .paddinger nav#main-nav .container ul.options li i {
   padding: 0 10px 0 5px;
   font-size: 1.4rem;
+  color: var(--black);
 }
 .paddinger nav#main-nav .container ul.features {
   display: flex;
@@ -277,7 +280,7 @@ html.dark {
   border-radius: var(--circle-border-radius);
   display: grid;
   place-items: center;
-  color: white;
+  color: var(--white);
 }
 .paddinger nav#main-nav .container ul.features li:first-child input {
   width: 40px;
@@ -289,6 +292,7 @@ html.dark {
   border: 2px solid var(--main-cyan-color);
   font-family: var(--main-font);
   background: var(--white);
+  color: var(--black);
 }
 .paddinger nav#main-nav .container ul.features li:first-child input[type=text].active {
   width: 200px;
@@ -331,7 +335,7 @@ nav.links .container > ul {
 nav.links .container > ul .home, nav.links .container > ul .home-2 {
   height: calc(100% + 3px);
   aspect-ratio: 1/1;
-  background: white;
+  background: var(--white);
   border-left: 3px solid #aaa;
   position: absolute;
   border-radius: var(--circle-border-radius);
@@ -401,7 +405,7 @@ nav.links .container > ul > li i {
 }
 nav.links .container > ul > li ul.brunch {
   position: absolute;
-  background: var(--light-gray);
+  background: var(--main-cyan-color);
   top: 100%;
   min-width: 100%;
   left: 0;
@@ -413,9 +417,11 @@ nav.links .container > ul > li ul.brunch li {
   padding: 10px;
   transition: var(--main-transition);
 }
+nav.links .container > ul > li ul.brunch li > a{
+  color: var(--white);
+}
 nav.links .container > ul > li ul.brunch li:hover {
   padding: 10px 20px;
-  background: var(--light-shadow-color);
 }
 nav.links .container > ul > li ul.brunch :not(:last-child) {
   border-bottom: 3px solid var(--white);
@@ -511,7 +517,8 @@ header#carousel #bullets .bullet.active {
   border-right: 10px solid var(--main-cyan-color);
   margin-bottom: 20px;
   margin-top: 10px;
-  color: var(--black)
+  color: var(--black);
+  font-family: var(--main-font);
 }
 .lastArticles .container.lastArtcicles {
   font-family: var(--main-font);
@@ -635,6 +642,9 @@ header#carousel #bullets .bullet.active {
   grid-template-columns: 1fr 1fr;
   width: 80%;
 }
+.lastArticles .container.lastArtcicles .bussenissSide .social .icons i.first.fas.fa-heart{
+  color: var(--white)
+}
 @media (min-width: 768px) {
   .lastArticles .container.lastArtcicles .bussenissSide .social .icons {
     aspect-ratio: 1/1.5;
@@ -667,7 +677,6 @@ header#carousel #bullets .bullet.active {
 .lastArticles .container.lastArtcicles .bussenissSide .social .icons i:hover {
   box-shadow: 5px 5px 5px var(--dark-for-light);
   position: relative;
-  z-index: 100;
   transform: scale(1.1);
 }
 @media (max-width: 768px) {
@@ -675,11 +684,13 @@ header#carousel #bullets .bullet.active {
     position: fixed;
     bottom: 20px;
     left: 20px;
+    z-index: 100;
   }
   .lastArticles .container.lastArtcicles .bussenissSide .social .icons {
     grid-template-columns: 1fr;
   }
   .lastArticles .container.lastArtcicles .bussenissSide .social .icons i {
+    font-size: 2rem;
     display: none;
     padding: 10px;
     border-radius: var(--circle-border-radius) !important;
@@ -813,7 +824,7 @@ footer#footer form.signIn input[name=email] {
   direction: ltr;
   border-radius: var(--main-border-radius);
   border: none;
-  margin-bottom: var(--little-separator);
+  /* margin-bottom: var(--little-separator); */
 }
 footer#footer form.signIn input {
   outline: none;
@@ -836,26 +847,27 @@ footer#footer form.signIn input[name=email], footer#footer form.signIn input[typ
 }
 
 .toTop {
-  width: 61px;
-  height: 61px;
+  width:  48px;
+  height: 48px;
   display: grid;
   place-items: center;
-  font-size: 2.5rem;
   box-shadow: 0 0 5px black;
   border-radius: var(--circle-border-radius);
   position: fixed;
   bottom: 35px;
   right: 20px;
-  color: white;
+  color: var(--white);
+  transform: var(--main-transition);
   text-decoration: none;
   background: var(--main-cyan-color);
+  font-size: 2rem;
 }
 
 footer#copyRights {
   padding: calc(var(--little-separator) / 2) 0;
   background: var(--white);
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-family: var(--main-font);
   color: var(--black);
 }
@@ -879,7 +891,7 @@ section.container#page .page-icon {
   font-size: 25rem;
   display: block;
   margin: var(--margin-top) 0;
-  color: var(--dark-for-light);
+  color: var(--black);
 }
 @media (max-width: 768px) {
   section.container#page .page-icon {
@@ -889,6 +901,8 @@ section.container#page .page-icon {
 section.container#page h2.title-page {
   text-align: center;
   margin-bottom: var(--margin-top);
+  font-family: var(--main-font);
+  color: var(--black)
 }
 section.container#page form.page-form {
   width: 500px;
@@ -905,6 +919,9 @@ section.container#page form.page-form input:not([type=submit]), section.containe
   outline: none;
   width: 100%;
   transition: var(--main-transition);
+  background: transparent;
+  font-family: var(--main-font);
+  color: var(--black)
 }
 section.container#page form.page-form input:not([type=submit]):focus-within
 , section.container#page form.page-form textarea:focus-within {
@@ -917,6 +934,9 @@ section.container#page form.page-form input:not([type=submit]):hover
   box-shadow: 0px 0px 10px var(--main-cyan-color);
   border-color: var(--main-cyan-color);
   color: var(--main-cyan-color);
+}
+section.container#page form.page-form input[type='email'] {
+  direction: ltr;
 }
 section.container#page form.page-form textarea {
   height: 300px;
@@ -993,7 +1013,8 @@ form.comment-form {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 10px;
-  color: var(--black)
+  color: var(--black);
+  z-index: 0;
 }
 @media (max-width: 768px){
   form.comment-form {
@@ -1037,6 +1058,11 @@ textarea {
   margin-block: var(--little-separator);
   --circle-border-radius: 1000px;
   position: relative;
+}
+@media (max-width: 768px) {
+  .commentsCont .comment {
+    width: 100%;
+  }
 }
 .commentsCont .comment::before{
   position: absolute;
@@ -1091,6 +1117,9 @@ textarea {
   justify-content:center;
   align-items: center;
   margin-top: 10px;
+  text-decoration: none;
+  font-family: tahoma;
+  color: var(--main-cyan-color)
 }
 .topicsMay .topicMay .img{
   width: 200px;
@@ -1119,9 +1148,12 @@ textarea {
   }
 }
 #error a{
-  margin: 0 auto;
+  margin: 3rem auto 0;
 }
 #error h2, #error a{
   margin-top: 1rem;
+}
+#error h2:nth-of-type(2){
+  margin-bottom: var(--little-separator);
 }
 /*# sourceMappingURL=style.css.map */
