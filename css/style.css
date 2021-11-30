@@ -221,7 +221,7 @@ html.dark {
   content: "";
   background: var(--white);
   width: 0;
-  height: 7px;
+  height: 10px;
   position: absolute;
   top: 42px;
   left: 0;
