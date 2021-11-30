@@ -1,6 +1,3 @@
-Array.from(document.querySelectorAll('nav.links .container > ul li')).forEach(link=>{
-    link.style.setProperty('--color', link.getAttribute('data-color'));
-});
 fetch('articles.json').then(function(result){
     return result.json();
 }).then(function(articles){
@@ -15,7 +12,7 @@ lastArticles.forEach(lastArticle =>{
         <h3>${lastArticle.name}</h2>
         <p dir='${lastArticle.english?'ltr':'rtl'}'>${lastArticle.summary}</p>
         <footer>
-            <a target='_blank' href='${lastArticle.link}'>قراءة المزيد</a>
+            <div class='cont'><a target='_blank' href='${lastArticle.link}'>قراءة المزيد</a></div>
             <time datatime='2021-10-27'>2021-10-27</time>
             <span class='writer'><i class='fas fa-user-edit'></i> ${lastArticle.writer}</span>
         </footer>

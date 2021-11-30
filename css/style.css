@@ -17,7 +17,7 @@ html {
   --heavy-shadow-color: rgb(50, 50, 50);
   --heavy-bg-color: #0001;
   --dark-for-light: #444444;
-  --black: #000;
+  --black: #333;
   --gray: #aaa;
   --light-gray: #eee;
   --main-border-radius: 10px;
@@ -59,12 +59,12 @@ html.dark {
 }
 
 .container.separator {
-  border-bottom: 4px solid var(--dark-for-light);
+  border-bottom: 2px solid var(--dark-for-light);
   margin-top: var(--little-separator);
 }
 
 .title-2 {
-  padding: 20px 20px 0 0;
+  padding: 10px 20px 10px 0;
   border-right: 10px solid var(--main-cyan-color);
   margin-bottom: 20px;
   margin-top: 10px;
@@ -103,8 +103,6 @@ html.dark {
 .btn.btn.btn:hover{
   color: var(--main-cyan-color) !important;
   background: transparent !important;
-  font-weight: bold;
-  /* box-shadow: inset 3px 3px 5px var(--light-shadow-color); */
 }
 /* End Golbal*/
 /* Start Main Nav */
@@ -120,6 +118,8 @@ html.dark {
   padding: var(--padding-top) 0;
   background: var(--white);
   width: 100%;
+  height: 10vh;
+  display: flex;
 }
 @media (max-width: 768px) {
   .paddinger nav#main-nav {
@@ -132,6 +132,7 @@ html.dark {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 .paddinger nav#main-nav .container .bars {
   display: none;
@@ -222,7 +223,7 @@ html.dark {
   width: 0;
   height: 7px;
   position: absolute;
-  bottom: calc(var(--padding-top) - var(--padding-top) * 2 - 8.7px);
+  top: 42px;
   left: 0;
   transition: var(--main-transition);
 }
@@ -245,8 +246,8 @@ html.dark {
   display: flex;
 }
 .paddinger nav#main-nav .container ul.features li :not(input) {
-  width: 40px;
-  height: 40px;
+  width:  30px;
+  height: 30px;
   display: grid;
   place-items: center;
   background: var(--main-cyan-color);
@@ -269,13 +270,13 @@ html.dark {
 .paddinger nav#main-nav .container ul.features li:first-child::after {
   content: "\f002";
   font-family: "Font Awesome 5 Free";
-  font-size: 1.4rem;
+  font-size: 1rem;
   font-weight: 900;
   position: absolute;
   top: 0;
   left: 0;
-  width: 40px;
-  height: 40px;
+  width:  30px;
+  height: 30px;
   background: var(--main-cyan-color);
   border-radius: var(--circle-border-radius);
   display: grid;
@@ -283,8 +284,8 @@ html.dark {
   color: var(--white);
 }
 .paddinger nav#main-nav .container ul.features li:first-child input {
-  width: 40px;
-  height: 40px;
+  width:  30px;
+  height: 30px;
   padding-right: 10px;
   border-radius: var(--circle-border-radius);
   transition: var(--main-transition);
@@ -293,6 +294,7 @@ html.dark {
   font-family: var(--main-font);
   background: var(--white);
   color: var(--black);
+  font-size: .8rem;
 }
 .paddinger nav#main-nav .container ul.features li:first-child input[type=text].active {
   width: 200px;
@@ -356,7 +358,7 @@ nav.links .container > ul .home-2 {
 }
 nav.links .container > ul .home-2 > svg {
   position: absolute;
-  transform: scaleX(0.2) scaleY(0.4);
+  transform: scale(0.5);
   bottom: 10px;
   left: -3px;
   display: none;
@@ -405,26 +407,30 @@ nav.links .container > ul > li i {
 }
 nav.links .container > ul > li ul.brunch {
   position: absolute;
-  background: var(--main-cyan-color);
+  background: var(--white);
   top: 100%;
   min-width: 100%;
   left: 0;
   z-index: 999999999999999900000000000000000000000000;
   display: none;
   flex-direction: column;
+  border: 3px solid var(--light-shadow-color);
 }
 nav.links .container > ul > li ul.brunch li {
-  padding: 10px;
   transition: var(--main-transition);
+  padding: 0 10px;
+  text-align: center;
 }
 nav.links .container > ul > li ul.brunch li > a{
-  color: var(--white);
+  color: var(--black);
+  padding: 10px 5px;
+  display: inline-block;
 }
 nav.links .container > ul > li ul.brunch li:hover {
-  padding: 10px 20px;
+  border-bottom: 4px solid var(--color);
 }
-nav.links .container > ul > li ul.brunch :not(:last-child) {
-  border-bottom: 3px solid var(--white);
+nav.links .container > ul > li ul.brunch :not(:last-child) a{
+  border-bottom: 2px solid var(--light-shadow-color);
 }
 nav.links .container > ul > li:hover ul.brunch {
   display: flex;
@@ -468,7 +474,7 @@ header#carousel #prev {
   right: 0;
 }
 header#carousel .carousel {
-  width: 600px;
+  width: 700px;
   height: 400px;
   position: relative;
   border-radius: var(--main-border-radius);
@@ -476,11 +482,12 @@ header#carousel .carousel {
 }
 header#carousel .carousel img {
   position: absolute;
-  max-width: 100%;
+  width: 700px;
   max-height: 100%;
   min-height: 100%;
   opacity: 0;
   transform: scale(0) rotate(-45deg);
+  object-fit: cover;
 }
 header#carousel .carousel img.active {
   transition: var(--main-transition);
@@ -500,9 +507,9 @@ header#carousel #bullets {
   align-items: center;
 }
 header#carousel #bullets .bullet {
-  width: 20px;
-  height: 20px;
-  border: 2px solid white;
+  width:  12px;
+  height: 12px;
+  border: 1.5px solid white;
   margin-left: 10px;
   border-radius: var(--circle-border-radius);
 }
@@ -513,7 +520,7 @@ header#carousel #bullets .bullet.active {
 /* End Carousel */
 /* Start Last Topics */
 .lastArticles .container > h2, .lastArticles .container h1 {
-  padding: 20px 20px 0 0;
+  padding: 10px 20px 10px 0;
   border-right: 10px solid var(--main-cyan-color);
   margin-bottom: 20px;
   margin-top: 10px;
@@ -597,12 +604,10 @@ header#carousel #bullets .bullet.active {
 }
 .lastArticles .container.lastArtcicles .lastArticlesSide article .text h3 {
   color: var(--black);
-  text-align: center;
   line-height: 1.5;
   margin-bottom: 20px;
 }
 .lastArticles .container.lastArtcicles .lastArticlesSide article .text p {
-  text-align: center;
   color: var(--dark-for-light);
   margin: 10px 0;
 }
@@ -615,15 +620,18 @@ header#carousel #bullets .bullet.active {
   color: var(--main-cyan-color);
   text-align: center;
 }
-.lastArticles .container.lastArtcicles .lastArticlesSide article .text footer .writer {
+.lastArticles .container.lastArtcicles .lastArticlesSide article .text footer .cont {
   grid-column: 1/3;
-  margin-top: var(--little-separator);
+  text-align: center;
+  margin-bottom: calc(var(--little-separator)/2);
 }
 .lastArticles .container.lastArtcicles .lastArticlesSide article .text footer a {
   text-decoration: none;
   transition: var(--main-transition);
-  padding-bottom: 10px;
   border-bottom: 2px solid transparent;
+  color: var(--main-cyan-color);
+  padding: 0 10px;
+  font-size: 1.5rem;
 }
 .lastArticles .container.lastArtcicles .lastArticlesSide article .text footer a:hover {
   border-bottom: 2px solid var(--main-cyan-color);
@@ -682,20 +690,22 @@ header#carousel #bullets .bullet.active {
 @media (max-width: 768px) {
   .lastArticles .container.lastArtcicles .bussenissSide .social {
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    bottom: 10px;
+    left: 10px;
     z-index: 100;
   }
   .lastArticles .container.lastArtcicles .bussenissSide .social .icons {
     grid-template-columns: 1fr;
+    margin: 0;
   }
   .lastArticles .container.lastArtcicles .bussenissSide .social .icons i {
     font-size: 2rem;
     display: none;
-    padding: 10px;
     border-radius: var(--circle-border-radius) !important;
     margin-top: 10px;
     transform-origin: center center;
+    width:  48px;
+    height: 48px;
   }
   .lastArticles .container.lastArtcicles .bussenissSide .social .icons i:hover {
     transform: scale(1.1);
@@ -703,6 +713,7 @@ header#carousel #bullets .bullet.active {
   }
   .lastArticles .container.lastArtcicles .bussenissSide .social .icons i.active {
     display: grid;
+    place-items: center;
   }
   .lastArticles .container.lastArtcicles .bussenissSide .social .icons .first {
     display: grid;
@@ -746,6 +757,7 @@ header#carousel #bullets .bullet.active {
   transition: var(--main-transition);
   font-size: 0.8rem;
   cursor: pointer;
+  direction: ltr;
 }
 .lastArticles .container.lastArtcicles .hashtags .hashes .hash:hover {
   opacity: 0.8;
@@ -766,7 +778,7 @@ header#carousel #bullets .bullet.active {
   background: var(--main-cyan-color);
   border: 1px solid transparent;
   color: white;
-  margin-right: 10px;
+  margin-right: 3px;
   font-size: 1.5rem;
   text-decoration: none;
   cursor: pointer;
@@ -800,7 +812,8 @@ footer#footer .whoAreWe {
   color: white;
 }
 footer#footer .whoAreWe h2 {
-  margin: var(--little-separator) 0;
+  margin: var(--little-separator) -13px var(--little-separator) 0;
+  font-size: 2rem;
 }
 footer#footer .whoAreWe p {
   line-height: 1.5;
@@ -812,6 +825,12 @@ footer#footer form.signIn {
   flex-direction: column;
   margin-right: 30px;
   font-size: 1rem;
+}
+footer#footer form.signIn::before{
+  content: "أشترك معنا في القائمة البريدية";
+  color: var(--white);
+  font-family: var(--main-font);
+  font-size: 1.5rem;
 }
 @media (max-width: 768px) {
   footer#footer form.signIn {
@@ -854,8 +873,8 @@ footer#footer form.signIn input[name=email], footer#footer form.signIn input[typ
   box-shadow: 0 0 5px black;
   border-radius: var(--circle-border-radius);
   position: fixed;
-  bottom: 35px;
-  right: 20px;
+  bottom: 10px;
+  right: 10px;
   color: var(--white);
   transform: var(--main-transition);
   text-decoration: none;
@@ -898,20 +917,31 @@ section.container#page .page-icon {
     font-size: 15rem;
   }
 }
-section.container#page h2.title-page {
+section.container#page .title-page {
   text-align: center;
   margin-bottom: var(--margin-top);
   font-family: var(--main-font);
   color: var(--black)
 }
-section.container#page form.page-form {
+section.container#page .text{
+  width: 500px;
+  border: 3px solid var(--black);
+  color: var(--black);
+  padding: 20px;
+  font-family: var(--main-font);
+  text-align: center;
+  line-height: 1.5;
+  border-radius: var(--main-border-radius);
+  max-height: 800px;
+}
+section.container#page .page-form {
   width: 500px;
   margin: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-section.container#page form.page-form input:not([type=submit]), section.container#page form.page-form textarea {
+section.container#page .page-form input:not([type=submit]), section.container#page .page-form textarea {
   margin: 10px 0;
   padding: 10px 20px;
   border-radius: var(--main-border-radius);
@@ -923,32 +953,32 @@ section.container#page form.page-form input:not([type=submit]), section.containe
   font-family: var(--main-font);
   color: var(--black)
 }
-section.container#page form.page-form input:not([type=submit]):focus-within
-, section.container#page form.page-form textarea:focus-within {
+section.container#page .page-form input:not([type=submit]):focus-within
+, section.container#page .page-form textarea:focus-within {
   box-shadow: 0px 0px 10px var(--main-cyan-color);
   border-color: var(--main-cyan-color);
   color: var(--main-cyan-color);
 }
-section.container#page form.page-form input:not([type=submit]):hover
-, section.container#page form.page-form textarea:hover {
+section.container#page .page-form input:not([type=submit]):hover
+, section.container#page .page-form textarea:hover {
   box-shadow: 0px 0px 10px var(--main-cyan-color);
   border-color: var(--main-cyan-color);
   color: var(--main-cyan-color);
 }
-section.container#page form.page-form input[type='email'] {
+section.container#page .page-form input[type='email'] {
   direction: ltr;
 }
-section.container#page form.page-form textarea {
+section.container#page .page-form textarea {
   height: 300px;
   font-size: 1.2rem;
   resize: none;
 }
-section.container#page form.page-form button {
+section.container#page .page-form button {
   padding: 0;
   margin: 0;
   display: inline;
 }
-section.container#page form.page-form > a, section.container#page form.page-form input[type=submit] {
+section.container#page .page-form > a, section.container#page .page-form input[type=submit] {
   transition: var(--main-transition);
   width: fit-content;
   width: -moz-fit-content;
@@ -968,7 +998,6 @@ section.container#page form.page-form > a, section.container#page form.page-form
 section.container#page form.page-form > a:hover, section.container#page form.page-form input[type=submit]:hover {
   color: var(--main-cyan-color) !important;
   background: white;
-  font-weight: bold;
   box-shadow: inset 3px 3px 5px var(--light-shadow-color);
 }
 @media (max-width: 600px) {
